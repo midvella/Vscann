@@ -1,0 +1,941 @@
+{
+    "0": {
+        "servis": "Reserved",
+        "protokol": "tcp/udp",
+        "aciklama": "Rezerve port"
+    },
+    "7": {
+        "servis": "Echo",
+        "protokol": "tcp/udp",
+        "aciklama": "Echo servisi"
+    },
+    "20": {
+        "servis": "FTP-Data",
+        "protokol": "tcp",
+        "aciklama": "FTP veri transferi",
+        "banner_patterns": []
+    },
+    "21": {
+        "servis": "FTP",
+        "protokol": "tcp",
+        "aciklama": "Dosya Transfer Protokolü",
+        "banner_patterns": [
+            {
+                "pattern": "vsFTPd\\s*(\\S+)",
+                "uygulama": "vsFTPd",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "ProFTPD\\s*(\\S+)",
+                "uygulama": "ProFTPD",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Pure-FTPd",
+                "uygulama": "Pure-FTPd",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "FileZilla Server\\s*(\\S+)",
+                "uygulama": "FileZilla FTP Server",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Microsoft FTP Service",
+                "uygulama": "Microsoft FTP",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "220.*FTP",
+                "uygulama": "FTP Servisi",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "22": {
+        "servis": "SSH",
+        "protokol": "tcp",
+        "aciklama": "Güvenli Kabuk (Secure Shell)",
+        "banner_patterns": [
+            {
+                "pattern": "OpenSSH[_ ](\\S+)",
+                "uygulama": "OpenSSH",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Dropbear[_ ](\\S+)",
+                "uygulama": "Dropbear SSH",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "libssh[_ ](\\S+)",
+                "uygulama": "libssh",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "SSH-2\\.0-",
+                "uygulama": "SSH Servisi",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "23": {
+        "servis": "Telnet",
+        "protokol": "tcp",
+        "aciklama": "Uzak terminal bağlantısı",
+        "banner_patterns": [
+            {
+                "pattern": "Telnet",
+                "uygulama": "Telnet Servisi",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "25": {
+        "servis": "SMTP",
+        "protokol": "tcp",
+        "aciklama": "E-posta gönderimi",
+        "banner_patterns": [
+            {
+                "pattern": "Postfix",
+                "uygulama": "Postfix",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "Sendmail[/ ](\\S+)",
+                "uygulama": "Sendmail",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Exim\\s*(\\S+)",
+                "uygulama": "Exim",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Microsoft ESMTP",
+                "uygulama": "Microsoft Exchange",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "220.*SMTP",
+                "uygulama": "SMTP Servisi",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "43": {
+        "servis": "WHOIS",
+        "protokol": "tcp",
+        "aciklama": "WHOIS sorgusu"
+    },
+    "53": {
+        "servis": "DNS",
+        "protokol": "tcp/udp",
+        "aciklama": "Alan Adı Sistemi"
+    },
+    "67": {
+        "servis": "DHCP-Server",
+        "protokol": "udp",
+        "aciklama": "DHCP sunucu"
+    },
+    "68": {
+        "servis": "DHCP-Client",
+        "protokol": "udp",
+        "aciklama": "DHCP istemci"
+    },
+    "69": {
+        "servis": "TFTP",
+        "protokol": "udp",
+        "aciklama": "Trivial Dosya Transfer"
+    },
+    "80": {
+        "servis": "HTTP",
+        "protokol": "tcp",
+        "aciklama": "Web sunucusu",
+        "banner_patterns": [
+            {
+                "pattern": "Apache/(\\S+)",
+                "uygulama": "Apache HTTP Server",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "nginx/(\\S+)",
+                "uygulama": "nginx",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "nginx",
+                "uygulama": "nginx",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "Microsoft-IIS/(\\S+)",
+                "uygulama": "Microsoft IIS",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "LiteSpeed/(\\S+)",
+                "uygulama": "LiteSpeed",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Caddy",
+                "uygulama": "Caddy",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "Jetty\\((\\S+)\\)",
+                "uygulama": "Eclipse Jetty",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "HTTP/\\d",
+                "uygulama": "HTTP Servisi",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "88": {
+        "servis": "Kerberos",
+        "protokol": "tcp/udp",
+        "aciklama": "Kimlik doğrulama"
+    },
+    "110": {
+        "servis": "POP3",
+        "protokol": "tcp",
+        "aciklama": "E-posta alma (POP3)",
+        "banner_patterns": [
+            {
+                "pattern": "Dovecot",
+                "uygulama": "Dovecot POP3",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "Courier",
+                "uygulama": "Courier POP3",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "111": {
+        "servis": "RPCBind",
+        "protokol": "tcp/udp",
+        "aciklama": "RPC Portmap"
+    },
+    "119": {
+        "servis": "NNTP",
+        "protokol": "tcp",
+        "aciklama": "Haber grupları"
+    },
+    "123": {
+        "servis": "NTP",
+        "protokol": "udp",
+        "aciklama": "Zaman senkronizasyonu"
+    },
+    "135": {
+        "servis": "MSRPC",
+        "protokol": "tcp",
+        "aciklama": "Microsoft RPC"
+    },
+    "137": {
+        "servis": "NetBIOS-NS",
+        "protokol": "udp",
+        "aciklama": "NetBIOS isim servisi"
+    },
+    "138": {
+        "servis": "NetBIOS-DGM",
+        "protokol": "udp",
+        "aciklama": "NetBIOS datagram"
+    },
+    "139": {
+        "servis": "NetBIOS-SSN",
+        "protokol": "tcp",
+        "aciklama": "NetBIOS oturum"
+    },
+    "143": {
+        "servis": "IMAP",
+        "protokol": "tcp",
+        "aciklama": "E-posta alma (IMAP)",
+        "banner_patterns": [
+            {
+                "pattern": "Dovecot",
+                "uygulama": "Dovecot IMAP",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "Courier-IMAP",
+                "uygulama": "Courier IMAP",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "161": {
+        "servis": "SNMP",
+        "protokol": "udp",
+        "aciklama": "Ağ yönetimi"
+    },
+    "162": {
+        "servis": "SNMP-Trap",
+        "protokol": "udp",
+        "aciklama": "SNMP uyarı"
+    },
+    "179": {
+        "servis": "BGP",
+        "protokol": "tcp",
+        "aciklama": "Border Gateway Protocol"
+    },
+    "194": {
+        "servis": "IRC",
+        "protokol": "tcp",
+        "aciklama": "Internet Relay Chat"
+    },
+    "389": {
+        "servis": "LDAP",
+        "protokol": "tcp",
+        "aciklama": "Dizin erişim protokolü"
+    },
+    "443": {
+        "servis": "HTTPS",
+        "protokol": "tcp",
+        "aciklama": "Güvenli web sunucusu (SSL/TLS)",
+        "banner_patterns": [
+            {
+                "pattern": "Apache/(\\S+)",
+                "uygulama": "Apache HTTPS",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "nginx/(\\S+)",
+                "uygulama": "nginx HTTPS",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "nginx",
+                "uygulama": "nginx HTTPS",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "Microsoft-IIS/(\\S+)",
+                "uygulama": "Microsoft IIS HTTPS",
+                "versiyon_grubu": 1
+            }
+        ]
+    },
+    "445": {
+        "servis": "SMB",
+        "protokol": "tcp",
+        "aciklama": "Dosya paylaşımı (Windows)"
+    },
+    "464": {
+        "servis": "Kerberos-Pw",
+        "protokol": "tcp/udp",
+        "aciklama": "Kerberos şifre değişikliği"
+    },
+    "465": {
+        "servis": "SMTPS",
+        "protokol": "tcp",
+        "aciklama": "Güvenli SMTP (SSL)",
+        "banner_patterns": [
+            {
+                "pattern": "Postfix",
+                "uygulama": "Postfix SMTPS",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "Exim\\s*(\\S+)",
+                "uygulama": "Exim SMTPS",
+                "versiyon_grubu": 1
+            }
+        ]
+    },
+    "500": {
+        "servis": "ISAKMP",
+        "protokol": "udp",
+        "aciklama": "IPsec VPN anahtar değişimi"
+    },
+    "502": {
+        "servis": "Modbus",
+        "protokol": "tcp",
+        "aciklama": "Endüstriyel kontrol sistemi"
+    },
+    "514": {
+        "servis": "Syslog",
+        "protokol": "udp",
+        "aciklama": "Sistem log servisi"
+    },
+    "515": {
+        "servis": "LPD",
+        "protokol": "tcp",
+        "aciklama": "Yazıcı servisi"
+    },
+    "520": {
+        "servis": "RIP",
+        "protokol": "udp",
+        "aciklama": "Yönlendirme bilgi protokolü"
+    },
+    "523": {
+        "servis": "IBM-DB2",
+        "protokol": "tcp",
+        "aciklama": "IBM DB2 veritabanı"
+    },
+    "530": {
+        "servis": "RPC",
+        "protokol": "tcp/udp",
+        "aciklama": "Remote Procedure Call"
+    },
+    "543": {
+        "servis": "Klogin",
+        "protokol": "tcp",
+        "aciklama": "Kerberos giriş"
+    },
+    "544": {
+        "servis": "Kshell",
+        "protokol": "tcp",
+        "aciklama": "Kerberos kabuk"
+    },
+    "548": {
+        "servis": "AFP",
+        "protokol": "tcp",
+        "aciklama": "Apple Filing Protocol"
+    },
+    "554": {
+        "servis": "RTSP",
+        "protokol": "tcp",
+        "aciklama": "Gerçek zamanlı akış"
+    },
+    "587": {
+        "servis": "SMTP-Sub",
+        "protokol": "tcp",
+        "aciklama": "E-posta gönderimi (TLS)",
+        "banner_patterns": [
+            {
+                "pattern": "Postfix",
+                "uygulama": "Postfix Submission",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "Exim\\s*(\\S+)",
+                "uygulama": "Exim Submission",
+                "versiyon_grubu": 1
+            }
+        ]
+    },
+    "593": {
+        "servis": "HTTP-RPC",
+        "protokol": "tcp",
+        "aciklama": "HTTP üzerinden RPC"
+    },
+    "623": {
+        "servis": "IPMI",
+        "protokol": "udp",
+        "aciklama": "Uzak sunucu yönetimi"
+    },
+    "631": {
+        "servis": "IPP",
+        "protokol": "tcp",
+        "aciklama": "Internet Yazıcı Protokolü"
+    },
+    "636": {
+        "servis": "LDAPS",
+        "protokol": "tcp",
+        "aciklama": "Güvenli LDAP (SSL)"
+    },
+    "873": {
+        "servis": "Rsync",
+        "protokol": "tcp",
+        "aciklama": "Dosya senkronizasyonu"
+    },
+    "902": {
+        "servis": "VMware",
+        "protokol": "tcp",
+        "aciklama": "VMware ESXi konsol"
+    },
+    "993": {
+        "servis": "IMAPS",
+        "protokol": "tcp",
+        "aciklama": "Güvenli IMAP (SSL)",
+        "banner_patterns": [
+            {
+                "pattern": "Dovecot",
+                "uygulama": "Dovecot IMAPS",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "995": {
+        "servis": "POP3S",
+        "protokol": "tcp",
+        "aciklama": "Güvenli POP3 (SSL)",
+        "banner_patterns": [
+            {
+                "pattern": "Dovecot",
+                "uygulama": "Dovecot POP3S",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "1080": {
+        "servis": "SOCKS",
+        "protokol": "tcp",
+        "aciklama": "SOCKS proxy"
+    },
+    "1099": {
+        "servis": "Java-RMI",
+        "protokol": "tcp",
+        "aciklama": "Java uzak çağrısı"
+    },
+    "1194": {
+        "servis": "OpenVPN",
+        "protokol": "tcp/udp",
+        "aciklama": "OpenVPN tüneli"
+    },
+    "1433": {
+        "servis": "MSSQL",
+        "protokol": "tcp",
+        "aciklama": "Microsoft SQL Server",
+        "banner_patterns": [
+            {
+                "pattern": "Microsoft SQL Server",
+                "uygulama": "MSSQL",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "1434": {
+        "servis": "MSSQL-Mon",
+        "protokol": "udp",
+        "aciklama": "MS SQL Server Browser"
+    },
+    "1521": {
+        "servis": "Oracle-DB",
+        "protokol": "tcp",
+        "aciklama": "Oracle veritabanı",
+        "banner_patterns": [
+            {
+                "pattern": "Oracle",
+                "uygulama": "Oracle DB",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "1723": {
+        "servis": "PPTP",
+        "protokol": "tcp",
+        "aciklama": "VPN (PPTP)"
+    },
+    "1883": {
+        "servis": "MQTT",
+        "protokol": "tcp",
+        "aciklama": "IoT mesaj protokolü",
+        "banner_patterns": [
+            {
+                "pattern": "MQTT",
+                "uygulama": "MQTT Broker",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "1900": {
+        "servis": "UPnP",
+        "protokol": "udp",
+        "aciklama": "Evrensel Tak Çalıştır"
+    },
+    "2049": {
+        "servis": "NFS",
+        "protokol": "tcp/udp",
+        "aciklama": "Ağ Dosya Sistemi"
+    },
+    "2082": {
+        "servis": "cPanel",
+        "protokol": "tcp",
+        "aciklama": "cPanel yönetim paneli"
+    },
+    "2083": {
+        "servis": "cPanel-SSL",
+        "protokol": "tcp",
+        "aciklama": "cPanel (SSL)"
+    },
+    "2181": {
+        "servis": "ZooKeeper",
+        "protokol": "tcp",
+        "aciklama": "Apache ZooKeeper"
+    },
+    "2222": {
+        "servis": "SSH-Alt",
+        "protokol": "tcp",
+        "aciklama": "Alternatif SSH"
+    },
+    "2375": {
+        "servis": "Docker",
+        "protokol": "tcp",
+        "aciklama": "Docker API"
+    },
+    "2376": {
+        "servis": "Docker-SSL",
+        "protokol": "tcp",
+        "aciklama": "Docker API (SSL)"
+    },
+    "3306": {
+        "servis": "MySQL",
+        "protokol": "tcp",
+        "aciklama": "MySQL/MariaDB veritabanı",
+        "banner_patterns": [
+            {
+                "pattern": "MariaDB[- ](\\S+)",
+                "uygulama": "MariaDB",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "(\\d+\\.\\d+\\.\\d+)-MariaDB",
+                "uygulama": "MariaDB",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "mysql[_ ](\\S+)",
+                "uygulama": "MySQL",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "5\\.\\d+\\.\\d+",
+                "uygulama": "MySQL",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "8\\.\\d+\\.\\d+",
+                "uygulama": "MySQL",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "3389": {
+        "servis": "RDP",
+        "protokol": "tcp",
+        "aciklama": "Uzak Masaüstü (Windows)",
+        "banner_patterns": [
+            {
+                "pattern": "RDP",
+                "uygulama": "Microsoft RDP",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "3690": {
+        "servis": "SVN",
+        "protokol": "tcp",
+        "aciklama": "Subversion"
+    },
+    "4369": {
+        "servis": "EPMD",
+        "protokol": "tcp",
+        "aciklama": "Erlang Port Mapper"
+    },
+    "4443": {
+        "servis": "HTTPS-Alt",
+        "protokol": "tcp",
+        "aciklama": "Alternatif HTTPS"
+    },
+    "4505": {
+        "servis": "SaltStack",
+        "protokol": "tcp",
+        "aciklama": "SaltStack Master"
+    },
+    "4506": {
+        "servis": "SaltStack-Ret",
+        "protokol": "tcp",
+        "aciklama": "SaltStack Return"
+    },
+    "5000": {
+        "servis": "Flask/UPnP",
+        "protokol": "tcp",
+        "aciklama": "Flask dev / UPnP"
+    },
+    "5060": {
+        "servis": "SIP",
+        "protokol": "tcp/udp",
+        "aciklama": "VoIP sinyal protokolü"
+    },
+    "5061": {
+        "servis": "SIP-TLS",
+        "protokol": "tcp",
+        "aciklama": "Güvenli SIP"
+    },
+    "5432": {
+        "servis": "PostgreSQL",
+        "protokol": "tcp",
+        "aciklama": "PostgreSQL veritabanı",
+        "banner_patterns": [
+            {
+                "pattern": "PostgreSQL\\s*(\\S+)",
+                "uygulama": "PostgreSQL",
+                "versiyon_grubu": 1
+            }
+        ]
+    },
+    "5672": {
+        "servis": "AMQP",
+        "protokol": "tcp",
+        "aciklama": "RabbitMQ mesaj kuyruğu",
+        "banner_patterns": [
+            {
+                "pattern": "AMQP",
+                "uygulama": "RabbitMQ / AMQP",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "5683": {
+        "servis": "CoAP",
+        "protokol": "udp",
+        "aciklama": "IoT CoAP Protokolü"
+    },
+    "5900": {
+        "servis": "VNC",
+        "protokol": "tcp",
+        "aciklama": "Uzak masaüstü (VNC)",
+        "banner_patterns": [
+            {
+                "pattern": "RFB\\s*(\\S+)",
+                "uygulama": "VNC (RFB)",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "VNC",
+                "uygulama": "VNC",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "5938": {
+        "servis": "TeamViewer",
+        "protokol": "tcp",
+        "aciklama": "TeamViewer uzak erişim"
+    },
+    "5984": {
+        "servis": "CouchDB",
+        "protokol": "tcp",
+        "aciklama": "CouchDB veritabanı"
+    },
+    "6379": {
+        "servis": "Redis",
+        "protokol": "tcp",
+        "aciklama": "Redis önbellek veritabanı",
+        "banner_patterns": [
+            {
+                "pattern": "redis_version:(\\S+)",
+                "uygulama": "Redis",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Redis",
+                "uygulama": "Redis",
+                "versiyon_grubu": 0
+            }
+        ]
+    },
+    "9200": {
+        "servis": "Elasticsearch",
+        "protokol": "tcp",
+        "aciklama": "Elasticsearch Arama Motoru",
+        "banner_patterns": [
+            {
+                "pattern": "\"number\"\\s*:\\s*\"(\\S+)\"",
+                "uygulama": "Elasticsearch",
+                "versiyon_grubu": 1
+            }
+        ]
+    },
+    "27017": {
+        "servis": "MongoDB",
+        "protokol": "tcp",
+        "aciklama": "MongoDB NoSQL Veritabanı",
+        "banner_patterns": [
+            {
+                "pattern": "MongoDB",
+                "uygulama": "MongoDB",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "db_version\\s*:\\s*\"(\\S+)\"",
+                "uygulama": "MongoDB",
+                "versiyon_grubu": 1
+            }
+        ]
+    },
+    "6443": {
+        "servis": "Kubernetes",
+        "protokol": "tcp",
+        "aciklama": "Kubernetes API Server"
+    },
+    "6660": {
+        "servis": "IRC-Alt",
+        "protokol": "tcp",
+        "aciklama": "IRC alternatif"
+    },
+    "6667": {
+        "servis": "IRC",
+        "protokol": "tcp",
+        "aciklama": "Internet Relay Chat"
+    },
+    "6881": {
+        "servis": "BitTorrent",
+        "protokol": "tcp",
+        "aciklama": "BitTorrent peer"
+    },
+    "7070": {
+        "servis": "RealServer",
+        "protokol": "tcp",
+        "aciklama": "Real Time Streaming"
+    },
+    "7474": {
+        "servis": "Neo4j",
+        "protokol": "tcp",
+        "aciklama": "Neo4j graph veritabanı"
+    },
+    "8000": {
+        "servis": "HTTP-Alt",
+        "protokol": "tcp",
+        "aciklama": "Alternatif HTTP"
+    },
+    "8080": {
+        "servis": "HTTP-Proxy",
+        "protokol": "tcp",
+        "aciklama": "HTTP proxy / alt web",
+        "banner_patterns": [
+            {
+                "pattern": "Apache/(\\S+)",
+                "uygulama": "Apache",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "nginx/(\\S+)",
+                "uygulama": "nginx",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Tomcat/(\\S+)",
+                "uygulama": "Apache Tomcat",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Squid/(\\S+)",
+                "uygulama": "Squid Proxy",
+                "versiyon_grubu": 1
+            },
+            {
+                "pattern": "Jenkins",
+                "uygulama": "Jenkins",
+                "versiyon_grubu": 0
+            },
+            {
+                "pattern": "X-Jenkins:\\s*(\\S+)",
+                "uygulama": "Jenkins",
+                "versiyon_grubu": 1
+            }
+        ]
+    },
+    "8081": {
+        "servis": "HTTP-Alt2",
+        "protokol": "tcp",
+        "aciklama": "Alternatif HTTP 2"
+    },
+    "8443": {
+        "servis": "HTTPS-Alt",
+        "protokol": "tcp",
+        "aciklama": "Alternatif HTTPS"
+    },
+    "8888": {
+        "servis": "HTTP-Alt3",
+        "protokol": "tcp",
+        "aciklama": "Jupyter / Alt HTTP"
+    },
+    "9000": {
+        "servis": "PHP-FPM",
+        "protokol": "tcp",
+        "aciklama": "PHP FastCGI / Portainer"
+    },
+    "9090": {
+        "servis": "WebConsole",
+        "protokol": "tcp",
+        "aciklama": "Cockpit / Prometheus"
+    },
+    "9092": {
+        "servis": "Kafka",
+        "protokol": "tcp",
+        "aciklama": "Apache Kafka"
+    },
+    "9300": {
+        "servis": "ES-Transport",
+        "protokol": "tcp",
+        "aciklama": "Elasticsearch Transport"
+    },
+    "9418": {
+        "servis": "Git",
+        "protokol": "tcp",
+        "aciklama": "Git daemon"
+    },
+    "9999": {
+        "servis": "Abyss",
+        "protokol": "tcp",
+        "aciklama": "Abyss / iş sunucusu"
+    },
+    "10000": {
+        "servis": "Webmin",
+        "protokol": "tcp",
+        "aciklama": "Webmin yönetim paneli"
+    },
+    "10250": {
+        "servis": "Kubelet",
+        "protokol": "tcp",
+        "aciklama": "Kubernetes Kubelet"
+    },
+    "11211": {
+        "servis": "Memcached",
+        "protokol": "tcp",
+        "aciklama": "Memcached önbellek"
+    },
+    "15672": {
+        "servis": "RabbitMQ",
+        "protokol": "tcp",
+        "aciklama": "RabbitMQ yönetim paneli"
+    },
+    "27018": {
+        "servis": "MongoDB-Shard",
+        "protokol": "tcp",
+        "aciklama": "MongoDB shard"
+    },
+    "28017": {
+        "servis": "MongoDB-Web",
+        "protokol": "tcp",
+        "aciklama": "MongoDB web arayüzü"
+    },
+    "33060": {
+        "servis": "MySQL-X",
+        "protokol": "tcp",
+        "aciklama": "MySQL X protokolü"
+    },
+    "44818": {
+        "servis": "EtherNet/IP",
+        "protokol": "tcp",
+        "aciklama": "Endüstriyel Ethernet"
+    },
+    "47808": {
+        "servis": "BACnet",
+        "protokol": "udp",
+        "aciklama": "Bina otomasyon sistemi"
+    },
+    "49152": {
+        "servis": "Dinamik",
+        "protokol": "tcp/udp",
+        "aciklama": "Dinamik port başlangıcı"
+    },
+    "50000": {
+        "servis": "SAP",
+        "protokol": "tcp",
+        "aciklama": "SAP Router"
+    },
+    "51413": {
+        "servis": "Transmission",
+        "protokol": "tcp",
+        "aciklama": "Transmission BitTorrent"
+    }
+}
