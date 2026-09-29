@@ -33,7 +33,6 @@ sudo python3 Vscann.py 192.168.1.10 --udp --verbose
 
 # Ağ taraması (CIDR tespiti)
 python3 Vscann.py 192.168.1.0/24
-```
 
 ### Önemli Parametreler
 
